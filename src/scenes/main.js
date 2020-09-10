@@ -2,6 +2,7 @@ export default class gameMain extends Phaser.Scene {
   constructor() { super('startGame'); }
 
   create() {
+    const gS = { score: 0 };
     const viewportHeight = 600;
 
     // background
@@ -38,5 +39,10 @@ export default class gameMain extends Phaser.Scene {
     platforms.create(128*7, viewportHeight-50, 'tile1');
     platforms.create(128*8, viewportHeight-50, 'tile2');
     platforms.create(128*9, viewportHeight-50, 'tile3');
+
+    // --- SCORE ---
+    gS.scoreText = this.add.text(20, 20, 'SCORE 0',
+      { fontSize: '22px', fill: 'yellow' });
+    gS.scoreText.setScrollFactor(0);
   }
 }
