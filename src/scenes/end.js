@@ -39,8 +39,9 @@ export default class gameEnd extends Scene {
     // submit score action (local)
     document.querySelector('#sendName').onclick = () => {
       sendScore(document.querySelector('#fieldName').value, window.gS.score);
-      this.scene.stop('gameOver');
-      this.scene.start('gameScore');
+
+      this.scene.stop('endGame');
+      this.scene.start('scoresGame');
     };
 
     // reset game button

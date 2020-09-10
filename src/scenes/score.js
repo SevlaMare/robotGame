@@ -31,7 +31,6 @@ export default class gameScores extends Scene {
 
     // fetch scores
     const allScores = getScore();
-    console.log(getScore());
 
     // populate leadboard
     for (const key in allScores) {
@@ -41,6 +40,7 @@ export default class gameScores extends Scene {
       playersScores += `<p>${score} by ${player}</p>`;
     }
 
+    // string list of players scores
     const scoreBoard = containerOpen + playersScores + containerClose;
 
     // display scores
