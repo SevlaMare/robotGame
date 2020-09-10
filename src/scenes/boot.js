@@ -35,6 +35,7 @@ export default class gameLoad extends Phaser.Scene {
   };
 
   create() {
+    // --- BOOT LOAD ---
     // background
     this.bg = this.add.tileSprite(200, 300, 400, 600, 'bgForest');
 
@@ -44,5 +45,25 @@ export default class gameLoad extends Phaser.Scene {
       fontSize: 'bold 36px',
       fontFamily: 'Georgias, Times, serif'
     })
-  }
+
+    // message
+    this.add.text(55, 220,
+      'Press Button to Start!',
+      { fill: 'red', fontSize: '22px' }
+    )
+
+    // information
+    this.add.text(50, 535,
+      'CONTROLS: \nArrows and spacebar',
+      { fill: '#345', fontSize: '22px' }
+    )
+
+    // --- MAIN GAME LOAD ---
+
+    // --- START GAME ACTION ---
+    this.input.on('pointerup', () => {
+      this.scene.stop('gameLoad');
+      this.scene.start('gameMain');
+    });
+  };
 };
