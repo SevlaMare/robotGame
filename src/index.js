@@ -3,6 +3,7 @@ import { Game } from './phaser.min';
 import bootGame from './scenes/boot';
 import startGame from './scenes/main';
 import endGame from './scenes/end';
+import scoresGame from './scenes/score';
 
 const config = {
   WebGL: true,
@@ -23,6 +24,7 @@ const config = {
     bootGame,
     startGame,
     endGame,
+    scoresGame
   ],
 };
 
