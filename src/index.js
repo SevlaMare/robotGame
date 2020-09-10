@@ -12,6 +12,14 @@ const config = {
   width: 400,
   height: 600,
   audio: { disableWebAudio: true },
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: { y: 500 },
+      enableBody: true,
+      debug: false,
+    },
+  },
   dom: { createContainer: true },
   scene: [
     bootGame,
