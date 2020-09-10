@@ -32,10 +32,12 @@ export default class gameScores extends Scene {
     // fetch scores
     const allScores = getScore();
 
-    // populate leadboard
-    for (const key in allScores) {
-      const player = allScores[key].name;
-      const { score } = allScores[key];
+    const keys = Object.keys(allScores);
+    const values = Object.values(allScores);
+
+    for (let i = 0; i < keys.length; i += 1) {
+      const player = keys[i];
+      const { score } = values[i];
 
       playersScores += `<p>${score} by ${player}</p>`;
     }
