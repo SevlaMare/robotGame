@@ -44,19 +44,21 @@ export default class gameMain extends Scene {
     platforms.create(128 * 9, viewportHeight - 50, 'tile3');
 
     // SCORE
-    // this.gS.scoreText = this.add.text(20, 20, 'SCORE 0',
-    //   { fontSize: '22px', fill: 'yellow' });
-    // this.gS.scoreText.setScrollFactor(0);
+    // insert text
+    gS.scoreText = this.add.text(20, 20, 'SCORE 0',
+      { fontSize: '22px', fill: 'yellow' });
+    // fix on camera
+    gS.scoreText.setScrollFactor(0);
 
     // PLAYER
-    // gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
-    // gS.player.setBodySize(180, 400);
-    // gS.player.setOffset(75, 90);
+    gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
+    gS.player.setBodySize(180, 400);
+    gS.player.setOffset(75, 90);
 
     // // PHYSIC
-    // gS.player.setCollideWorldBounds(true);
-    // this.physics.add.collider(gS.player, platforms);
-    // this.physics.world.setBounds(0, 0, worldWidth, viewportHeight);
+    gS.player.setCollideWorldBounds(true);
+    this.physics.add.collider(gS.player, platforms);
+    this.physics.world.setBounds(0, 0, worldWidth, viewportHeight);
 
     // // CONTROL
     // gS.cursors = this.input.keyboard.createCursorKeys();
