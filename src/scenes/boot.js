@@ -1,4 +1,6 @@
-export default class gameLoad extends Phaser.Scene {
+import { Scene } from '../phaser.min';
+
+export default class gameLoad extends Scene {
   constructor() { super('bootGame'); }
 
   preload() {

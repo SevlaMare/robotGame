@@ -1,13 +1,10 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-
 import './css/style.css';
-import './phaser.min';
+import { Game } from './phaser.min';
 import bootGame from './scenes/boot';
 import startGame from './scenes/main';
 
 const config = {
-  type: Phaser.AUTO,
+  WebGL: true,
   parent: 'canvas',
   width: 400,
   height: 600,
@@ -27,4 +24,5 @@ const config = {
   ],
 };
 
-const game = new Phaser.Game(config);
+window.gS = { score: 0 };
+window.game = new Game(config);

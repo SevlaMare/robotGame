@@ -13,10 +13,7 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "arrow-parens": "off",
-	"no-unused-vars": "off",
-	"no-undef": "off"
-	
+    "arrow-parens": "off"
   },
   "ignorePatterns": [
     "dist/",
