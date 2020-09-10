@@ -24,7 +24,7 @@ const config = {
     bootGame,
     startGame,
     endGame,
-    scoresGame
+    scoresGame,
   ],
 };
 
