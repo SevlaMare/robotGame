@@ -68,6 +68,7 @@ export default class gameMain extends Scene {
     };
 
     // respawn auto
+    /* eslint no-unused-vars: ["error", { "varsIgnorePattern": "ninjaGeneratorLoop" }] */
     const ninjaGeneratorLoop = this.time.addEvent({
       delay: 1500,
       callback: ninjaGenerator,
@@ -128,18 +129,23 @@ export default class gameMain extends Scene {
     } else {
       window.gS.player.setVelocityX(0);
       window.gS.player.anims.play('stayRobot', true);
-    };
+    }
 
     // jump
     if (window.gS.cursors.up.isDown && window.gS.player.body.touching.down) {
       window.gS.player.setVelocityY(-speed);
-    };
+    }
 
     // shoot
     if (window.gS.cursors.space.isDown && (this.time.now > window.gS.nextFire)) {
       this.shoot(window.gS.playerDirection);
       window.gS.nextFire = this.time.now + 500;
       window.gS.player.anims.play('shotRobot', true);
-    };
+    }
+
+    // enemy animation
+    window.gS.ninjas.children.iterate((child) => {
+      child.anims.play('ninjaAtack', true);
+    });
   }
 }

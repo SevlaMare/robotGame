@@ -68,8 +68,8 @@ export default class gameLoad extends Scene {
     " id="scoreBtn">Global Scores</h2>`;
     this.add.dom(120, 300).setOrigin(0).createFromHTML(scoresBtn);
 
-    // --- MAIN GAME LOAD ---
-    // player animations
+    // --- LOAD animations ---
+    // player
     this.anims.create({
       key: 'runRobot',
       frames: this.anims.generateFrameNumbers('robot',
@@ -101,6 +101,15 @@ export default class gameLoad extends Scene {
       frames: this.anims.generateFrameNumbers('shot',
         { start: 0, end: 4 }),
       frameRate: 20,
+      repeat: -1,
+    });
+
+    // enemy
+    this.anims.create({
+      key: 'ninjaAtack',
+      frames: this.anims.generateFrameNumbers('ninja',
+        { start: 0, end: 5 }),
+      frameRate: 8,
       repeat: -1,
     });
 
