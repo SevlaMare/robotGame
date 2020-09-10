@@ -4,6 +4,7 @@ export default class gameMain extends Phaser.Scene {
   create() {
     const gS = { score: 0 };
     const viewportHeight = 600;
+    const worldWidth = 1200;
 
     // background
     this.bg = this.add.image(0, 0, 'bg')
@@ -49,5 +50,10 @@ export default class gameMain extends Phaser.Scene {
     gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
     gS.player.setBodySize(180, 400);
     gS.player.setOffset(75, 90);
+
+    // PHYSIC
+    gS.player.setCollideWorldBounds(true);
+    this.physics.add.collider(gS.player, platforms);
+    this.physics.world.setBounds(0, 0, worldWidth, viewportHeight);
   }
 }
