@@ -124,6 +124,12 @@ export default class gameLoad extends Scene {
       this.scene.start('startGame');
     });
 
+    // Local leadboard
+    localStorage.setItem('scores', JSON.stringify({
+      player1: { name: 'Mr Robot', score: 123 },
+      player2: { name: 'Std', score: 321 },
+    }));
+
     // --- LEADBOARD BUTTON ---
     document.querySelector('#scoreBtn').onclick = () => {
       this.scene.stop('bootGame');

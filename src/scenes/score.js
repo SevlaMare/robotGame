@@ -4,6 +4,7 @@ export default class gameScores extends Scene {
   constructor() { super('scoresGame'); }
 
   create() {
+    // background
     this.bg = this.add.tileSprite(200, 300, 400, 600, 'bgForest');
 
     // title
@@ -12,6 +13,10 @@ export default class gameScores extends Scene {
       fontSize: 'bold 36px',
       fontFamily: 'Georgias, Times, serif',
     });
+
+    // fetch scores
+    // const allScores = getScore();
+    // console.log(getScore())
 
     // leadboard
     const containerOpen = `<div id="scoresBoard" style="
@@ -26,6 +31,13 @@ export default class gameScores extends Scene {
     "`;
     const playersScores = '';
     const containerClose = '</div>';
+
+    // populate leadboard
+    // for (var key in allScores) {
+    //   let player = allScores[key]['name']
+    //   let score = allScores[key]['score']
+    //   playersScores += `<p>${score} by ${player}</p>`
+    // }
 
     const scoreBoard = containerOpen + playersScores + containerClose;
 
