@@ -16,6 +16,15 @@ export default class gameMain extends Phaser.Scene {
     this.skull = this.add.image(1000, 465, 'skull');
     this.cloud = this.add.image(350, 80, 'cloud').setScale(0.4);
 
+    this.moveCloud = this.tweens.add({
+      targets: this.cloud,
+      x: 500,
+      ease: 'Linear',
+      duration: 2600,
+      repeat: -1,
+      yoyo: true
+    });
+
     // platforms
     const platforms = this.physics.add.staticGroup();
     platforms.create(128, viewportHeight-50, 'tile1');
