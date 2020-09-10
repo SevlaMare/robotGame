@@ -24,7 +24,25 @@ export default class gameScores extends Scene {
       color: #333;
       background: #fff;>
     "`;
-    let playersScores = '';
-    const containerClose = `</div>`;
+    const playersScores = '';
+    const containerClose = '</div>';
+
+    const scoreBoard = containerOpen + playersScores + containerClose;
+
+    // display scores
+    this.add.dom(70, 105).setOrigin(0).createFromHTML(scoreBoard);
+
+    // button back title
+    const backBtn = `<h2 style="color: #333;
+      padding: 3px 5px;
+      border: 2px solid #345;
+      border-radius: 5px;
+      background: #fff;
+      cursor: pointer;
+      " id="backBtn">Back to title</h2>`;
+    this.add.dom(130, 500).setOrigin(0).createFromHTML(backBtn);
+
+    // back action
+    document.querySelector('#backBtn').onclick = () => window.location.reload();
   }
 }
