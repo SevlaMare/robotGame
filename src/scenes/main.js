@@ -68,9 +68,9 @@ export default class gameMain extends Scene {
   /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
   // this rule doesn't apply here, since a static method is not desire
   update() {
-    // directional movement
     const speed = 350;
 
+    // directional movement
     if (window.gS.cursors.right.isDown) {
       window.gS.player.setVelocityX(speed);
       window.gS.player.anims.play('runRobot', true);
@@ -84,6 +84,11 @@ export default class gameMain extends Scene {
     } else {
       window.gS.player.setVelocityX(0);
       window.gS.player.anims.play('stayRobot', true);
+    }
+
+    // jump
+    if (window.gS.cursors.up.isDown && window.gS.player.body.touching.down) {
+      window.gS.player.setVelocityY(-speed);
     }
   }
 }
