@@ -67,6 +67,17 @@ export default class gameMain extends Scene {
         .setOffset(140, 40);
     };
 
+    // respawn auto
+    const ninjaGeneratorLoop = this.time.addEvent({
+      delay: 1500,
+      callback: ninjaGenerator,
+      callbackScope: this,
+      loop: true,
+    });
+
+    // enemy physics
+    this.physics.add.collider(window.gS.ninjas, platforms);
+    this.physics.add.collider(window.gS.ninjas, window.gS.ninjas);
 
     // // PHYSIC world player
     window.gS.player.setCollideWorldBounds(true);
@@ -97,10 +108,10 @@ export default class gameMain extends Scene {
     }
   }
 
-  // CONTROLL ACTIONs
   /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
   // this rule doesn't apply here, since a static method is not desire
   update() {
+    // CONTROLL ACTIONs
     const speed = 350;
 
     // directional movement
@@ -117,18 +128,18 @@ export default class gameMain extends Scene {
     } else {
       window.gS.player.setVelocityX(0);
       window.gS.player.anims.play('stayRobot', true);
-    }
+    };
 
     // jump
     if (window.gS.cursors.up.isDown && window.gS.player.body.touching.down) {
       window.gS.player.setVelocityY(-speed);
-    }
+    };
 
     // shoot
     if (window.gS.cursors.space.isDown && (this.time.now > window.gS.nextFire)) {
       this.shoot(window.gS.playerDirection);
       window.gS.nextFire = this.time.now + 500;
       window.gS.player.anims.play('shotRobot', true);
-    }
+    };
   }
 }
