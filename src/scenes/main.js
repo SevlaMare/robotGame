@@ -32,6 +32,7 @@ export default class gameMain extends Scene {
 
     // platforms
     const platforms = this.physics.add.staticGroup();
+
     platforms.create(128, viewportHeight - 50, 'tile1');
     platforms.create(128 * 2, viewportHeight - 50, 'tile2');
     platforms.create(128 * 3, viewportHeight - 50, 'tile3');
@@ -55,6 +56,17 @@ export default class gameMain extends Scene {
     window.gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
     window.gS.player.setBodySize(180, 400);
     window.gS.player.setOffset(75, 90);
+
+    // ENEMY
+    window.gS.ninjas = this.physics.add.group();
+
+    const ninjaGenerator = () => {
+      window.gS.ninjas.create(Math.random() * worldWidth, 10, 'ninja')
+        .setScale(0.4)
+        .setBodySize(180, 400)
+        .setOffset(140, 40);
+    };
+
 
     // // PHYSIC world player
     window.gS.player.setCollideWorldBounds(true);
