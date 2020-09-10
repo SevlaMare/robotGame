@@ -56,13 +56,17 @@ export default class gameMain extends Scene {
     window.gS.player.setBodySize(180, 400);
     window.gS.player.setOffset(75, 90);
 
-    // // PHYSIC
+    // // PHYSIC world player
     window.gS.player.setCollideWorldBounds(true);
     this.physics.add.collider(window.gS.player, platforms);
     this.physics.world.setBounds(0, 0, worldWidth, viewportHeight);
 
     // // CONTROL
     window.gS.cursors = this.input.keyboard.createCursorKeys();
+
+    // CAMERA
+    this.cameras.main.setBounds(0, 0, worldWidth, viewportHeight, 100, 100);
+    this.cameras.main.startFollow(window.gS.player);
   }
 
   shoot(direction) {
@@ -71,6 +75,7 @@ export default class gameMain extends Scene {
 
     // physics
     beam.setVelocityY(-250);
+
     if (direction === 'right') {
       beam.setVelocityX(225);
       beam.flipX = false;
