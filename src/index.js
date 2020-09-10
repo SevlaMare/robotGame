@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+
 import './css/style.css';
 import './phaser.min';
 import bootGame from './scenes/boot';
-import startGame from './scenes/main'
+import startGame from './scenes/main';
 
 const config = {
   type: Phaser.AUTO,
@@ -11,7 +14,7 @@ const config = {
   audio: { disableWebAudio: true },
   scene: [
     bootGame,
-    startGame
+    startGame,
   ],
 };
 
