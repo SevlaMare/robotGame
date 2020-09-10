@@ -24,7 +24,6 @@ export default class gameEnd extends Scene {
       padding: 10px;
       background: #fff;
     " id="fieldName">
-
     <input type="button" value="GO" 
       id="sendName"
       style="color: #333;
@@ -33,7 +32,17 @@ export default class gameEnd extends Scene {
       border: solid 2px #333;
       cursor: pointer;
       font-size: 16px0">
-  </form>`;
+    </form>`;
     this.add.dom(85, 270).setOrigin(0).createFromHTML(inputName);
+
+    // RESET BUTTON
+    const restartBtn = `<h2 style="color: #fff;
+      padding: 3px 5px;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      background: #333;
+      cursor: pointer;"
+      id="resetBtn">Play Again</h2>`;
+    this.add.dom(140, 400).setOrigin(0).createFromHTML(restartBtn);
   }
 }
