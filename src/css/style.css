@@ -1,4 +1,27 @@
 body {
-  margin: 0;
-  padding: 0;
+  background: #020024;
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(6, 70, 161, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+#canvas {
+  width: fit-content;
+  margin: 50px auto;
+  padding: 1px 3px;
+}
+
+#title {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
