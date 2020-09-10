@@ -109,9 +109,13 @@ export default class gameMain extends Scene {
     }
 
     // kill enemy
-    this.physics.add.collider(beam, gS.ninjas, function(bullet, enemy) {
+    this.physics.add.collider(beam, window.gS.ninjas, (bullet, enemy) => {
       bullet.destroy();
       enemy.destroy();
+
+      // update score
+      window.gS.score += 10;
+      window.gS.scoreText.setText(`Score: ${window.gS.score}`);
     });
   }
 
