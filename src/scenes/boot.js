@@ -125,6 +125,10 @@ export default class gameLoad extends Scene {
     });
 
     // --- LEADBOARD BUTTON ---
+    document.querySelector('#scoreBtn').onclick = () => {
+      this.scene.stop('bootGame');
+      this.scene.start('scoresGame');
+    };
   }
 
   /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
