@@ -91,6 +91,14 @@ export default class gameMain extends Scene {
     // CAMERA
     this.cameras.main.setBounds(0, 0, worldWidth, viewportHeight, 100, 100);
     this.cameras.main.startFollow(window.gS.player);
+
+    // --- GAME OVER ---
+    this.physics.add.collider(gS.player, gS.ninjas, () => {
+      ninjaGeneratorLoop.destroy();
+      this.physics.pause();
+      // this.scene.stop('startGame');
+      // this.scene.start('endGame');
+    });
   }
 
   shoot(direction) {
