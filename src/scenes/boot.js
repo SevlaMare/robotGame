@@ -69,6 +69,22 @@ export default class gameLoad extends Scene {
     this.add.dom(120, 300).setOrigin(0).createFromHTML(scoresBtn);
 
     // --- MAIN GAME LOAD ---
+    // player animations
+    this.anims.create({
+      key: 'runRobot',
+      frames: this.anims.generateFrameNumbers('robot',
+        { start: 0, end: 4 }),
+      frameRate: 5,
+      repeat: -1,
+    });
+
+    this.anims.create({
+      key: 'stayRobot',
+      frames: this.anims.generateFrameNumbers('robot',
+        { start: 5, end: 6 }),
+      frameRate: 5,
+      repeat: -1,
+    });
 
     // --- START GAME ACTION ---
     this.input.keyboard.on('keydown', () => {
