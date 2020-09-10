@@ -107,6 +107,12 @@ export default class gameMain extends Scene {
       beam.setVelocityX(-225);
       beam.flipX = true;
     }
+
+    // kill enemy
+    this.physics.add.collider(beam, gS.ninjas, function(bullet, enemy) {
+      bullet.destroy();
+      enemy.destroy();
+    });
   }
 
   /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
