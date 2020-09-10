@@ -40,9 +40,14 @@ export default class gameMain extends Phaser.Scene {
     platforms.create(128*8, viewportHeight-50, 'tile2');
     platforms.create(128*9, viewportHeight-50, 'tile3');
 
-    // --- SCORE ---
+    // SCORE
     gS.scoreText = this.add.text(20, 20, 'SCORE 0',
       { fontSize: '22px', fill: 'yellow' });
     gS.scoreText.setScrollFactor(0);
+
+    // PLAYER
+    gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
+    gS.player.setBodySize(180, 400);
+    gS.player.setOffset(75, 90);
   }
 }
