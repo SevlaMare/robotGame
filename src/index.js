@@ -1,7 +1,6 @@
 import './css/style.css';
 import './phaser.min';
-import bootGame from './boot';
-import Load from './load';
+import bootGame from './scenes/boot';
 
 const config = {
   type: Phaser.AUTO,
