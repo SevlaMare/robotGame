@@ -1,4 +1,5 @@
 import { Scene } from '../phaser.min';
+import { getScore } from '../connector';
 
 export default class gameScores extends Scene {
   constructor() { super('scoresGame'); }
@@ -14,10 +15,6 @@ export default class gameScores extends Scene {
       fontFamily: 'Georgias, Times, serif',
     });
 
-    // fetch scores
-    // const allScores = getScore();
-    // console.log(getScore())
-
     // leadboard
     const containerOpen = `<div id="scoresBoard" style="
       height: 350px;
@@ -29,15 +26,20 @@ export default class gameScores extends Scene {
       color: #333;
       background: #fff;>
     "`;
-    const playersScores = '';
+    let playersScores = '';
     const containerClose = '</div>';
 
+    // fetch scores
+    const allScores = getScore();
+    console.log(getScore());
+
     // populate leadboard
-    // for (var key in allScores) {
-    //   let player = allScores[key]['name']
-    //   let score = allScores[key]['score']
-    //   playersScores += `<p>${score} by ${player}</p>`
-    // }
+    for (const key in allScores) {
+      const player = allScores[key].name;
+      const { score } = allScores[key];
+
+      playersScores += `<p>${score} by ${player}</p>`;
+    }
 
     const scoreBoard = containerOpen + playersScores + containerClose;
 

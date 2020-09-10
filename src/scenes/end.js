@@ -1,4 +1,5 @@
 import { Scene } from '../phaser.min';
+import { sendScore } from '../connector';
 
 export default class gameEnd extends Scene {
   constructor() { super('endGame'); }
@@ -13,11 +14,11 @@ export default class gameEnd extends Scene {
       fontFamily: 'Georgias, Times, serif',
     });
 
-    // score
+    // display current score
     const score = `<p>SCORE ${window.gS.score}<p>`;
     this.add.dom(165, 140).setOrigin(0).createFromHTML(score);
 
-    // SUBMIT SCORE
+    // submit score input
     const inputName = `<form>
     <input style="color: #333;
       width: 160px;
@@ -35,7 +36,14 @@ export default class gameEnd extends Scene {
     </form>`;
     this.add.dom(85, 270).setOrigin(0).createFromHTML(inputName);
 
-    // RESET BUTTON
+    // submit score action (local)
+    document.querySelector('#sendName').onclick = () => {
+      sendScore(document.querySelector('#fieldName').value, window.gS.score);
+      this.scene.stop('gameOver');
+      this.scene.start('gameScore');
+    };
+
+    // reset game button
     const restartBtn = `<h2 style="color: #fff;
       padding: 3px 5px;
       border: 2px solid #fff;
@@ -45,7 +53,7 @@ export default class gameEnd extends Scene {
       id="resetBtn">Play Again</h2>`;
     this.add.dom(140, 400).setOrigin(0).createFromHTML(restartBtn);
 
-    // RESET ACTION
+    // reset game action
     const resetBtn = document.querySelector('#resetBtn');
 
     resetBtn.onclick = () => {
