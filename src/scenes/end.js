@@ -44,5 +44,15 @@ export default class gameEnd extends Scene {
       cursor: pointer;"
       id="resetBtn">Play Again</h2>`;
     this.add.dom(140, 400).setOrigin(0).createFromHTML(restartBtn);
+
+    // RESET ACTION
+    const resetBtn = document.querySelector('#resetBtn');
+
+    resetBtn.onclick = () => {
+      window.gS.score = 0;
+
+      this.scene.stop('endGame');
+      this.scene.start('startGame');
+    };
   }
 }
