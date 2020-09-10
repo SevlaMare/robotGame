@@ -6,7 +6,8 @@ export default class gameMain extends Scene {
   create() {
     const viewportHeight = 600;
     const worldWidth = 1200;
-    window.window.gS.playerDirection = 'right';
+    window.gS.playerDirection = 'right';
+    window.gS.nextFire = 0;
 
     // background
     this.bg = this.add.image(0, 0, 'bg')
@@ -64,6 +65,11 @@ export default class gameMain extends Scene {
     window.gS.cursors = this.input.keyboard.createCursorKeys();
   }
 
+  shoot(direction) {
+    const beam = this.physics.add.sprite(window.gS.player.x, window.gS.player.y, 'shot').setScale(0.4);
+    beam.anims.play('fireBullet', true);
+  }
+
   // CONTROLL ACTIONs
   /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
   // this rule doesn't apply here, since a static method is not desire
@@ -89,6 +95,13 @@ export default class gameMain extends Scene {
     // jump
     if (window.gS.cursors.up.isDown && window.gS.player.body.touching.down) {
       window.gS.player.setVelocityY(-speed);
-    }
+    };
+
+    // shoot
+    if ( window.gS.cursors.space.isDown && (this.time.now > window.gS.nextFire) ) {
+      this.shoot(gS.playerDirection);
+      window.gS.nextFire = this.time.now + 500;
+      window.gS.player.anims.play('shotRobot', true);
+    };
   }
 }

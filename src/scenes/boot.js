@@ -86,6 +86,24 @@ export default class gameLoad extends Scene {
       repeat: -1,
     });
 
+    this.anims.create({
+      key: 'shotRobot',
+      frames: this.anims.generateFrameNumbers('robot',
+        { start: 7, end: 9 }),
+      frameRate: 3,
+      duration: 1000,
+      hideOnComplete: true
+    });
+
+    // bullet
+    this.anims.create({
+      key: 'fireBullet',
+      frames: this.anims.generateFrameNumbers('shot',
+        { start: 0, end: 4 }),
+      frameRate: 20,
+      repeat: -1
+    });
+
     // --- START GAME ACTION ---
     this.input.keyboard.on('keydown', () => {
       this.scene.stop('gameLoad');
@@ -98,5 +116,11 @@ export default class gameLoad extends Scene {
     });
 
     // --- LEADBOARD BUTTON ---
-  }
+  };
+
+  /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
+  // this rule doesn't apply here, since a static method is not desire
+  update() {
+    this.bg.tilePositionX -= 0.05;
+  };
 }
