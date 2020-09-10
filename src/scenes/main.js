@@ -4,9 +4,9 @@ export default class gameMain extends Scene {
   constructor() { super('startGame'); }
 
   create() {
-    const gS = { score: 0 };
     const viewportHeight = 600;
     const worldWidth = 1200;
+    window.window.gS.playerDirection = 'right';
 
     // background
     this.bg = this.add.image(0, 0, 'bg')
@@ -45,42 +45,45 @@ export default class gameMain extends Scene {
 
     // SCORE
     // insert text
-    gS.scoreText = this.add.text(20, 20, 'SCORE 0',
+    window.gS.scoreText = this.add.text(20, 20, 'SCORE 0',
       { fontSize: '22px', fill: 'yellow' });
     // fix on camera
-    gS.scoreText.setScrollFactor(0);
+    window.gS.scoreText.setScrollFactor(0);
 
     // PLAYER
-    gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
-    gS.player.setBodySize(180, 400);
-    gS.player.setOffset(75, 90);
+    window.gS.player = this.physics.add.sprite(200, 300, 'robot').setScale(0.38);
+    window.gS.player.setBodySize(180, 400);
+    window.gS.player.setOffset(75, 90);
 
     // // PHYSIC
-    gS.player.setCollideWorldBounds(true);
-    this.physics.add.collider(gS.player, platforms);
+    window.gS.player.setCollideWorldBounds(true);
+    this.physics.add.collider(window.gS.player, platforms);
     this.physics.world.setBounds(0, 0, worldWidth, viewportHeight);
 
     // // CONTROL
-    // gS.cursors = this.input.keyboard.createCursorKeys();
+    window.gS.cursors = this.input.keyboard.createCursorKeys();
   }
 
   // CONTROLL ACTIONs
-  // update() {
-  //   // directional movement
-  //   const speed = 350;
-  //   if (gS.cursors.right.isDown) {
-  //     gS.player.setVelocityX(speed);
-  //     gS.player.anims.play('runRobot', true)
-  //     gS.player.flipX = false;
-  //     gS.playerDirection = 'right';
-  //   } else if (gS.cursors.left.isDown) {
-  //     gS.player.setVelocityX(-speed);
-  //     gS.player.anims.play('runRobot', true);
-  //     gS.player.flipX = true;
-  //     gS.playerDirection = 'left';
-  //   } else {
-  //     gS.player.setVelocityX(0);
-  //     gS.player.anims.play('stayRobot', true);
-  //   };
-  // };
+  /* eslint class-methods-use-this: ["error", { "exceptMethods": ["update"] }] */
+  // this rule doesn't apply here, since a static method is not desire
+  update() {
+    // directional movement
+    const speed = 350;
+
+    if (window.gS.cursors.right.isDown) {
+      window.gS.player.setVelocityX(speed);
+      window.gS.player.anims.play('runRobot', true);
+      window.gS.player.flipX = false;
+      window.gS.playerDirection = 'right';
+    } else if (window.gS.cursors.left.isDown) {
+      window.gS.player.setVelocityX(-speed);
+      window.gS.player.anims.play('runRobot', true);
+      window.gS.player.flipX = true;
+      window.gS.playerDirection = 'left';
+    } else {
+      window.gS.player.setVelocityX(0);
+      window.gS.player.anims.play('stayRobot', true);
+    }
+  }
 }
