@@ -80,12 +80,12 @@ export default class gameMain extends Scene {
     this.physics.add.collider(window.gS.ninjas, platforms);
     this.physics.add.collider(window.gS.ninjas, window.gS.ninjas);
 
-    // // PHYSIC world player
+    // PHYSIC world player
     window.gS.player.setCollideWorldBounds(true);
     this.physics.add.collider(window.gS.player, platforms);
     this.physics.world.setBounds(0, 0, worldWidth, viewportHeight);
 
-    // // CONTROL
+    // CONTROL
     window.gS.cursors = this.input.keyboard.createCursorKeys();
 
     // CAMERA
@@ -93,11 +93,11 @@ export default class gameMain extends Scene {
     this.cameras.main.startFollow(window.gS.player);
 
     // --- GAME OVER ---
-    this.physics.add.collider(gS.player, gS.ninjas, () => {
+    this.physics.add.collider(window.gS.player, window.gS.ninjas, () => {
       ninjaGeneratorLoop.destroy();
       this.physics.pause();
-      // this.scene.stop('startGame');
-      // this.scene.start('endGame');
+      this.scene.stop('startGame');
+      this.scene.start('endGame');
     });
   }
 
