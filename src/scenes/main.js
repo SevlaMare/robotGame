@@ -68,6 +68,16 @@ export default class gameMain extends Scene {
   shoot(direction) {
     const beam = this.physics.add.sprite(window.gS.player.x, window.gS.player.y, 'shot').setScale(0.4);
     beam.anims.play('fireBullet', true);
+
+    // physics
+    beam.setVelocityY(-250);
+    if (direction === 'right') {
+      beam.setVelocityX(225);
+      beam.flipX = false;
+    } else if (direction === 'left') {
+      beam.setVelocityX(-225);
+      beam.flipX = true;
+    }
   }
 
   // CONTROLL ACTIONs
@@ -95,13 +105,13 @@ export default class gameMain extends Scene {
     // jump
     if (window.gS.cursors.up.isDown && window.gS.player.body.touching.down) {
       window.gS.player.setVelocityY(-speed);
-    };
+    }
 
     // shoot
-    if ( window.gS.cursors.space.isDown && (this.time.now > window.gS.nextFire) ) {
-      this.shoot(gS.playerDirection);
+    if (window.gS.cursors.space.isDown && (this.time.now > window.gS.nextFire)) {
+      this.shoot(window.gS.playerDirection);
       window.gS.nextFire = this.time.now + 500;
       window.gS.player.anims.play('shotRobot', true);
-    };
+    }
   }
 }
