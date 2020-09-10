@@ -12,5 +12,9 @@ export default class gameEnd extends Scene {
       fontSize: 'bold 36px',
       fontFamily: 'Georgias, Times, serif'
     })
+
+    // score
+    const score = `<p>SCORE ${gS.score}<p>`
+    this.add.dom(165, 140).setOrigin(0).createFromHTML(score);
   }
 }
