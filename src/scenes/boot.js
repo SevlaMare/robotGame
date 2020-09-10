@@ -56,12 +56,29 @@ export default class gameLoad extends Phaser.Scene {
       'CONTROLS: \nArrows and spacebar',
       { fill: '#345', fontSize: '22px' });
 
+    // scores button
+    const scoresBtn = `<h2 style="color: #345;
+      padding: 3px 5px;
+      border: 2px solid #345;
+      border-radius: 5px;
+      background: #fff;
+      cursor: pointer;
+    " id="scoreBtn">Global Scores</h2>`;
+    this.add.dom(120, 300).setOrigin(0).createFromHTML(scoresBtn);
+
     // --- MAIN GAME LOAD ---
 
     // --- START GAME ACTION ---
-    this.input.on('pointerup', () => {
+    this.input.keyboard.on('keydown', () => {
       this.scene.stop('gameLoad');
       this.scene.start('gameMain');
     });
+
+    this.input.on('pointerup', () => {
+      this.scene.stop('bootGame');
+      this.scene.start('startGame');
+    });
+
+    // --- LEADBOARD BUTTON ---
   }
 }
