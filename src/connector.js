@@ -1,10 +1,12 @@
 const getScore = async (url) => {
   const response = await fetch(url, {
-    method: 'GET', mode: 'cors',
+    method: 'GET',
+    mode: 'cors',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
   });
 
   // if (response.status !== 200) { return displayError('Game not found'); }
+
   return response.json();
 };
 
@@ -15,14 +17,10 @@ const sendScore = async (name, score) => {
   const response = await fetch(url, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, score }),
+    body: JSON.stringify({ user: name, score }),
   });
 
-  // console.log('running sendScore');
-
-  const data = await response.json();
-
-  return data;
+  return response.json();
 };
 
 export { sendScore, getScore };

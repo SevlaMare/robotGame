@@ -23,7 +23,6 @@ const renderScores = (result) => {
   // string list of players scores
   const scoreBoard = containerOpen + playersScores + containerClose;
 
-  // console.log(result[index]['user'], result[index]['score'])
   return scoreBoard;
 };
 
