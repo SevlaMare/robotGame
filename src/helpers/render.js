@@ -13,7 +13,7 @@ const renderScores = (result) => {
   const containerClose = '</div>';
 
   // loop over input and insert in a paragraph
-  for (let index = 0; index < result.length; index += 1) {
+  for (let index = 0; index < 10; index += 1) {
     const player = result[index].user;
     const { score } = result[index];
 
