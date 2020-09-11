@@ -101,6 +101,6 @@ A special thanks for the code reviewers.
 - Linkedin: [SevlaMare](https://www.linkedin.com/in/sevla-mare)
 
 ### License
-Sprites from gameart2d.com
+Sprites from gameart2d.com and cloud sprite from bevouliin.com
 
 <strong>Creative Commons • 2020</strong>
