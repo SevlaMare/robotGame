@@ -13,9 +13,9 @@ const renderScores = (result) => {
   const containerClose = '</div>';
 
   // loop over input and insert in a paragraph
-  for (let index = 0; index < result.length; index+=1) {
-    const player = result[index]['user']
-    const score = result[index]['score']
+  for (let index = 0; index < result.length; index += 1) {
+    const player = result[index].user;
+    const { score } = result[index];
 
     playersScores += `<p>${score} by ${player}</p>`;
   }
@@ -24,7 +24,7 @@ const renderScores = (result) => {
   const scoreBoard = containerOpen + playersScores + containerClose;
 
   // console.log(result[index]['user'], result[index]['score'])
-  return scoreBoard
+  return scoreBoard;
 };
 
 export default renderScores;

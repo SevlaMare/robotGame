@@ -9,8 +9,7 @@
     "build:prod": "webpack --mode production",
     "go": "webpack-dev-server --host 0.0.0.0 --port 7000",
     "stylelint": "npx stylelint ./src/css/*.css",
-    "eslint": "npx eslint ./src/*.js",
-    "eslint2": "npx eslint ./src/scenes/*.js",
+    "eslint": "npx eslint ./src/**/*.js",
     "test": "jest"
   },
   "author": "Thiago Miranda",

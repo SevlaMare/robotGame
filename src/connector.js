@@ -1,19 +1,3 @@
-// Localstorage connector
-// const sendScore = (name, score) => {
-//   // access DB
-//   const database = JSON.parse(localStorage.getItem('scores'));
-
-//   // insert new value
-//   database.player3 = { name, score };
-
-//   // store
-//   return localStorage.setItem('scores', JSON.stringify(database));
-// };
-
-// get local scores
-// const getScore = () => JSON.parse(localStorage.getItem('scores'));
-
-// fetchData
 const getScore = async (url) => {
   const response = await fetch(url, {
     method: 'GET',
