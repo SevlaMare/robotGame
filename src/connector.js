@@ -5,9 +5,7 @@ const getScore = async (url) => {
   });
 
   // if (response.status !== 200) { return displayError('Game not found'); }
-  const data = await response.json();
-
-  return data;
+  return response.json();
 };
 
 const sendScore = async (name, score) => {
@@ -17,7 +15,7 @@ const sendScore = async (name, score) => {
   const response = await fetch(url, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ user: name, score }),
+    body: JSON.stringify({ name: name, score: score }),
   });
 
   // console.log('running sendScore');
