@@ -9,6 +9,7 @@
 
 * [Live Demo](#live-demo)
 * [Requirements](#requirements)
+* [Requisites](#built-with)
 * [Built With](#built-with)
 * [Getting Start](#getting-start)
 * [Contributing](#contributing)
@@ -17,19 +18,19 @@
 * [License](#license)
 
 ## Live Demo
-You can access a deployed version of this app:<br>
+You can access a online version of this game at:<br>
 https://weather-app-007.web.app/
 
 ## Requirements
-- [x] A modern web browser [Download page](https://www.google.com/chrome/)
-- [x] Node (Get start with Node)[https://nodejs.org/en/download/]
-- [x] Yarn (Get start with Yarn)[https://classic.yarnpkg.com/en/docs/install/#windows-stable]
+- [x] A game build with Phaser 
+- [x] Leadboard system using an API
+- [x] Deployed and documented
 
-## Pre-requisites
+## Requisites
 <ul>
-	<li>Node</li>
-	<li>Yarn</li>
-	<li>Web browser</li>
+  <li>A modern web browser [Download page](https://www.google.com/chrome/)</li>
+  <li>Node [Get start with Node](https://nodejs.org/en/download/)</li>
+  <li>Yarn [Get start with Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable)</li>
 </ul>
 
 ## Built With
@@ -44,7 +45,7 @@ https://weather-app-007.web.app/
 - Git, Github and VScode <br>
 
 
-## Setup
+## Getting Start
 
 #### Get a local copy
 Now you need a copy of this application, if you are using Git:
