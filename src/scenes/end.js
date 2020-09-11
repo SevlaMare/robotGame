@@ -40,6 +40,8 @@ export default class gameEnd extends Scene {
     document.querySelector('#sendName').onclick = () => {
       sendScore(document.querySelector('#fieldName').value, window.gS.score);
 
+      // console.log('sendScore call done');
+
       this.scene.stop('endGame');
       this.scene.start('scoresGame');
     };

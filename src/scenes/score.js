@@ -1,6 +1,6 @@
 import { Scene } from '../phaser.min';
 import { getScore } from '../connector';
-import renderScores from '../helpers/render'
+import renderScores from '../helpers/render';
 
 export default class gameScores extends Scene {
   constructor() { super('scoresGame'); }
@@ -19,10 +19,10 @@ export default class gameScores extends Scene {
     // fetch scores
     const hash = 'XzHsDGhBgMOmUU8gUgdd';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${hash}/scores/`;
-    const allScores = getScore(url).then((body) => {
+    getScore(url).then((body) => {
       this.add.dom(70, 105)
         .setOrigin(0)
-        .createFromHTML(renderScores(body['result']));
+        .createFromHTML(renderScores(body.result));
     });
 
     // button back title
