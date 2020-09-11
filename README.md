@@ -9,6 +9,7 @@
 
 * [Live Demo](#live-demo)
 * [Requirements](#requirements)
+* [Possible new features](possible-new-features)
 * [Requisites](#built-with)
 * [Built With](#built-with)
 * [Getting Start](#getting-start)
@@ -26,12 +27,15 @@ https://weather-app-007.web.app/
 - [x] Leadboard system using an API
 - [x] Deployed and documented
 
+## Possible new features
+- Pagination for scores
+- Highlight player best scores
+- More content (Stages, actions and animations)
+
 ## Requisites
-<ul>
-  <li>A modern web browser [Download page](https://www.google.com/chrome/)</li>
-  <li>Node [Get start with Node](https://nodejs.org/en/download/)</li>
-  <li>Yarn [Get start with Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable)</li>
-</ul>
+* [A modern web browser](https://www.google.com/chrome/)
+* [Node JS](https://nodejs.org/en/download/)
+* [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
 
 ## Built With
 
