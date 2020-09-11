@@ -36,14 +36,13 @@ export default class gameEnd extends Scene {
     </form>`;
     this.add.dom(85, 270).setOrigin(0).createFromHTML(inputName);
 
-    // submit score action (local)
+    // submit score action
     document.querySelector('#sendName').onclick = () => {
-      sendScore(document.querySelector('#fieldName').value, window.gS.score);
-
-      // console.log('sendScore call done');
-
-      this.scene.stop('endGame');
-      this.scene.start('scoresGame');
+      sendScore(document.querySelector('#fieldName').value, window.gS.score)
+        .then(() => {
+          this.scene.stop('endGame');
+          this.scene.start('scoresGame');
+        });
     };
 
     // reset game button
