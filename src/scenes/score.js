@@ -1,5 +1,6 @@
 import { Scene } from '../phaser.min';
 import { getScore } from '../connector';
+import renderScores from '../helpers/render'
 
 export default class gameScores extends Scene {
   constructor() { super('scoresGame'); }
@@ -15,38 +16,14 @@ export default class gameScores extends Scene {
       fontFamily: 'Georgias, Times, serif',
     });
 
-    // leadboard
-    const containerOpen = `<div id="scoresBoard" style="
-      height: 350px;
-      width: 250px;
-      padding: 3px 5px;
-      font-size: 16xpx;
-      border: 3px solid #333;
-      border-radius: 5px;
-      color: #333;
-      background: #fff;>
-    "`;
-    let playersScores = '';
-    const containerClose = '</div>';
-
     // fetch scores
-    const allScores = getScore();
-
-    const keys = Object.keys(allScores);
-    const values = Object.values(allScores);
-
-    for (let i = 0; i < keys.length; i += 1) {
-      const player = keys[i];
-      const { score } = values[i];
-
-      playersScores += `<p>${score} by ${player}</p>`;
-    }
-
-    // string list of players scores
-    const scoreBoard = containerOpen + playersScores + containerClose;
-
-    // display scores
-    this.add.dom(70, 105).setOrigin(0).createFromHTML(scoreBoard);
+    const hash = 'XzHsDGhBgMOmUU8gUgdd';
+    const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${hash}/scores/`;
+    const allScores = getScore(url).then((body) => {
+      this.add.dom(70, 105)
+        .setOrigin(0)
+        .createFromHTML(renderScores(body['result']));
+    });
 
     // button back title
     const backBtn = `<h2 style="color: #333;
