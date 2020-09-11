@@ -19,6 +19,7 @@ export default class gameScores extends Scene {
     // fetch scores
     const hash = 'XzHsDGhBgMOmUU8gUgdd';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${hash}/scores/`;
+
     getScore(url).then((body) => {
       this.add.dom(70, 105)
         .setOrigin(0)
@@ -36,6 +37,9 @@ export default class gameScores extends Scene {
     this.add.dom(130, 500).setOrigin(0).createFromHTML(backBtn);
 
     // back action
-    document.querySelector('#backBtn').onclick = () => window.location.reload();
+    document.querySelector('#backBtn').onclick = () => {
+      this.scene.stop('scoresGame');
+      this.scene.start('bootGame');
+    };
   }
 }

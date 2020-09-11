@@ -23,6 +23,7 @@ const sendScore = async (name, score) => {
   // console.log('running sendScore');
 
   const data = await response.json();
+
   return data;
 };
 
