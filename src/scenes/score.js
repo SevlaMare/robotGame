@@ -23,7 +23,9 @@ export default class gameScores extends Scene {
     getScore(url).then((body) => {
       this.add.dom(70, 105)
         .setOrigin(0)
-        .createFromHTML(renderScores(body.result));
+        .createFromHTML(
+          renderScores(body.result.sort((a, b) => b.score - a.score)),
+        );
     });
 
     // button back title
