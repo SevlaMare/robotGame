@@ -1,6 +1,6 @@
 const getScore = async (url) => {
   const response = await fetch(url, {
-    method: 'GET',
+    method: 'GET', mode: 'cors',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
   });
 
@@ -15,7 +15,7 @@ const sendScore = async (name, score) => {
   const response = await fetch(url, {
     method: 'POST',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name: name, score: score }),
+    body: JSON.stringify({ name, score }),
   });
 
   // console.log('running sendScore');
