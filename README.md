@@ -28,8 +28,9 @@ https://weather-app-007.web.app/
 - [x] Deployed and documented
 
 ## Possible new features
+- Controls for mobile
 - Pagination for scores
-- Highlight player best scores
+- Highlight player best score
 - More content (Stages, actions and animations)
 
 ## Requisites
@@ -56,7 +57,7 @@ Now you need a copy of this application, if you are using Git:
 ```js
 git clone git@github.com:SevlaMare/robotGame.git
 ```
-Otherwise just hit (Download Zip) on green button (Clone or Download) at top of this page.
+Otherwise just hit (Download Zip) on green button (Code) at top of this page.
 
 #### Open terminal
 Open your terminal inside the game folder, and paste the following commands:
@@ -100,4 +101,6 @@ A special thanks for the code reviewers.
 - Linkedin: [SevlaMare](https://www.linkedin.com/in/sevla-mare)
 
 ### License
+Sprites from gameart2d.com
+
 <strong>Creative Commons • 2020</strong>
