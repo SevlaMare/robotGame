@@ -10,4 +10,9 @@ describe('renderScores', () => {
     expect(renderScores([{ 'user': 'asd', 'score': 123 }]))
       .not.toBeUndefined();
   });
+
+  it('is null', () => {
+    expect(renderScores())
+      .toBeNull();
+  });
 });
