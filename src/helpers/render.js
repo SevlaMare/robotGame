@@ -19,7 +19,7 @@ const renderScores = (result) => {
 
     playersScores += `<p>${score} by ${player}</p>`;
 
-    if (result[index+1] == undefined) break;
+    if (result[index + 1] === undefined) break;
   }
 
   // string list of players scores
