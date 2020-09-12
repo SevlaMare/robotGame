@@ -18,6 +18,8 @@ const renderScores = (result) => {
     const { score } = result[index];
 
     playersScores += `<p>${score} by ${player}</p>`;
+
+    if (result[index+1] == undefined) break;
   }
 
   // string list of players scores
