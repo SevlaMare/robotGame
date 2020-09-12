@@ -12,6 +12,8 @@ const renderScores = (result) => {
   let playersScores = '';
   const containerClose = '</div>';
 
+  if (result === undefined) {return null};
+
   // loop over input and insert in a paragraph
   for (let index = 0; index < 10; index += 1) {
     const player = result[index].user;
