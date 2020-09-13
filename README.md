@@ -102,10 +102,6 @@ https://compassionate-shockley-5fecf8.netlify.app/
 - [x] Deploy
 - [x] Basic documentation
 
-##### Note
-At the end of day 2, I decided to keep the game with 1 stage instead of 3, to deploy on time.
-
-
 ## Getting Start
 
 #### Get a local copy
