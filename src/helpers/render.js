@@ -14,6 +14,8 @@ const renderScores = (result) => {
 
   if (result === undefined) { return null; }
 
+  result = result.sort((a, b) => b.score - a.score);
+
   // loop over input and insert in a paragraph
   for (let index = 0; index < 10; index += 1) {
     const player = result[index].user;
@@ -30,4 +32,6 @@ const renderScores = (result) => {
   return scoreBoard;
 };
 
-export default renderScores;
+const displayError = (msg) => { document.querySelector('#error').innerHTML = msg; };
+
+export { renderScores, displayError };

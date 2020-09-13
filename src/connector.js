@@ -5,9 +5,9 @@ const getScore = async (url) => {
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
   });
 
-  // if (response.status !== 200) { return displayError('Game not found'); }
+  if (response.status === 200) { return response.json(); }
 
-  return response.json();
+  return Promise.reject(new Error('Error, try late.'));
 };
 
 const sendScore = async (name, score) => {
