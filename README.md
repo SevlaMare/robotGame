@@ -21,7 +21,7 @@
 
 ## Live Demo
 You can access a online version of this game at:<br>
-https://modest-lichterman-f04b76.netlify.app/
+https://compassionate-shockley-5fecf8.netlify.app/
 
 ## Requirements
 - [x] A game build with Phaser 
@@ -63,6 +63,47 @@ https://modest-lichterman-f04b76.netlify.app/
 * Kind: Shooter
 * Platform: Desktop web browser
 * Target: Build and deploy in 5 days, using free assets only.
+
+### Schedule
+#### Day 1 - Plan and setup
+- [x] Design game
+- [x] Execution plan
+- [x] Follow tutorial
+- [x] Look for examples
+
+#### Prepare assets
+- [x] Find source
+- [x] Resize sprites
+- [x] Create spreadsheets
+
+#### Setup
+- [x] Setup environment
+- [x] Configurations
+- [x] Files sctructure
+
+#### Day 2 - Start development
+##### Implementation
+- [x] Draft start, game, and ending scenes
+- [x] Setup to load assets and animations
+
+#### Day 3 - Core game engine
+- [x] Player movement
+- [x] Player shoot
+- [x] Enemy generator
+- [x] Score system
+
+#### Day 4 - Documentation and API
+- [x] Read API docs
+- [x] fetch data from API
+- [x] Integrates with API to submit scores
+- [x] Write unit tests
+
+#### Day 5 - Polish and Deploy
+- [x] Deploy
+- [x] Basic documentation
+
+##### Note
+At the end of day 2, I decided to keep the game with 1 stage instead of 3, to deploy on time.
 
 
 ## Getting Start
