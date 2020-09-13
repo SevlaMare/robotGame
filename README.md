@@ -20,7 +20,7 @@
 
 ## Live Demo
 You can access a online version of this game at:<br>
-https://weather-app-007.web.app/
+https://modest-lichterman-f04b76.netlify.app/
 
 ## Requirements
 - [x] A game build with Phaser 
