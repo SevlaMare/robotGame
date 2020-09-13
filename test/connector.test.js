@@ -1,3 +1,4 @@
+import regeneratorRuntime from "regenerator-runtime";
 import { getScore, sendScore } from '../src/connector';
 
 describe('getScore', () => {

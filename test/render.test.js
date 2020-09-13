@@ -1,4 +1,4 @@
-import renderScores from '../src/helpers/render';
+import { renderScores } from '../src/helpers/render';
 
 describe('renderScores', () => {
   it('display scores as string', () => {

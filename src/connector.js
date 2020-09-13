@@ -5,9 +5,7 @@ const getScore = async (url) => {
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
   });
 
-  if (response.status === 200) { return response.json(); }
-
-  return Promise.reject(new Error('Error, try late.'));
+  return response.json();
 };
 
 const sendScore = async (name, score) => {
