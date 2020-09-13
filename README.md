@@ -12,6 +12,7 @@
 * [Possible new features](possible-new-features)
 * [Requisites](#built-with)
 * [Built With](#built-with)
+* [Game Design](#game-design)
 * [Getting Start](#getting-start)
 * [Contributing](#contributing)
 * [Acknowledgments](#acknowledgments)
@@ -48,6 +49,20 @@ https://modest-lichterman-f04b76.netlify.app/
 - ESlint and Stylelint (Linters) <br>
 - GitHub Actions (CI Tool) <br>
 - Git, Github and VScode <br>
+
+## Game Design
+
+### Objective of the game
+* Play until reach the top 10.
+
+### Game Mechanics
+* Shoot ninjas to earn points.
+* Keep moving to avoid ninjas or is game over.
+
+### Scope
+* Kind: Shooter
+* Platform: Desktop web browser
+* Target: Build and deploy in 5 days, using free assets only.
 
 
 ## Getting Start
