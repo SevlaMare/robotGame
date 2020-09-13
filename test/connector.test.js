@@ -1,4 +1,5 @@
-import regeneratorRuntime from "regenerator-runtime";
+/* eslint-disable no-unused-vars */
+import regeneratorRuntime from 'regenerator-runtime';
 import { getScore, sendScore } from '../src/connector';
 
 describe('getScore', () => {
