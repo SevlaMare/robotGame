@@ -28,7 +28,7 @@
 
 ## Live Demo
 You can access a online version of this game at:<br>
-https://compassionate-shockley-5fecf8.netlify.app/
+https://robot-vs-ninja.netlify.app/
 
 ## Requirements
 - [x] A game build with Phaser 
