@@ -1,5 +1,6 @@
 import { Scene } from '../phaser.min';
 import { sendScore } from '../connector';
+import { displayError } from '../helpers/render';
 
 export default class gameEnd extends Scene {
   constructor() { super('endGame'); }
@@ -42,7 +43,8 @@ export default class gameEnd extends Scene {
         .then(() => {
           this.scene.stop('endGame');
           this.scene.start('scoresGame');
-        });
+        })
+        .catch(err => displayError(err));
     };
 
     // reset game button
