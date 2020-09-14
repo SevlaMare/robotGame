@@ -18,4 +18,15 @@ describe('sendScore', () => {
 
     await expect(sendScore('url')).resolves.toEqual(fetchData);
   });
+
+  it('throw error on status 400 response', async () => {
+    global.fetch = jest.fn(() =>
+    Promise.resolve({
+      json: jest.fn(),
+      status: 400,
+      statusText: 'Bad request',
+    }),
+  )
+    await expect(sendScore({ user: undefined, score: 123 })).rejects.toThrow('You need your name to send.');
+  });
 });

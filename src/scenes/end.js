@@ -26,7 +26,7 @@ export default class gameEnd extends Scene {
       padding: 10px;
       background: #fff;
     " id="fieldName" required>
-    <input type="submit" value="GO" 
+    <input type="submit" value="GO"
       id="sendName"
       style="color: #333;
       padding: 8px;
@@ -50,8 +50,8 @@ export default class gameEnd extends Scene {
     document.querySelector('#sendName').onclick = (event) => {
       sendScore(document.querySelector('#fieldName').value, window.gS.score)
         .then(() => {
-          // this.scene.stop('endGame');
-          // this.scene.start('scoresGame');
+          this.scene.stop('endGame');
+          this.scene.start('scoresGame');
         })
         .catch(err => displayError(err));
 
