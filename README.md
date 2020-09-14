@@ -1,5 +1,5 @@
 # Robot vs Ninja
-> A game where you can eliminate the ninjas, using a robot with massive destruction weapows.
+> A game where you can eliminate the ninjas, using a robot with massive destruction weapons.
 
 ![screenshot](doc/screenshot.png)
 
@@ -19,20 +19,27 @@
 * [Author](#author)
 * [License](#license)
 
+## How to play
+* Left and right keyboard arrows to move the robot.
+* Up arrow to jump.
+* Space bar to shoot the ninjas.
+* Press any button to start the game on the start screen.
+* Click in OK button to submit a score on game over screen.
+
 ## Live Demo
 You can access a online version of this game at:<br>
 https://compassionate-shockley-5fecf8.netlify.app/
 
 ## Requirements
 - [x] A game build with Phaser 
-- [x] Leadboard system using an API
+- [x] Leaderboard system using an API
 - [x] Deployed and documented
 
 ## Possible new features
 - Controls for mobile
 - Pagination for scores
 - Highlight player best score
-- More content (Stages, actions and animations)
+- More content (Stages, actions, and animations)
 
 ## Requisites
 * [A modern web browser](https://www.google.com/chrome/)
@@ -53,7 +60,7 @@ https://compassionate-shockley-5fecf8.netlify.app/
 ## Game Design
 
 ### Objective of the game
-* Play until reach the top 10.
+* Play until you reach the top 10
 
 ### Game Mechanics
 * Shoot ninjas to earn points.
@@ -132,6 +139,11 @@ yarn go
 #### Go to a web browser (Like Google Chrome) and visit:
 ```js
 localhost:7000
+```
+
+#### Run the tests
+```js
+yarn test
 ```
 
 ### Contributing
