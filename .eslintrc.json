@@ -17,6 +17,6 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "src/phaser.min.js"
   ]
 }

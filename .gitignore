@@ -4,3 +4,4 @@ yarn.lock
 .firebase
 .firebaserc
 firebase.json
+*.log
