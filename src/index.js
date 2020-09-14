@@ -28,5 +28,5 @@ const config = {
   ],
 };
 
-window.gS = { score: 0 };
+window.gS = { score: 10 };
 window.game = new Game(config);
