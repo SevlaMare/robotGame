@@ -14,6 +14,7 @@ const sendScore = async (name, score) => {
 
   const response = await fetch(url, {
     method: 'POST',
+    mode: 'cors',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     body: JSON.stringify({ user: name, score }),
   });
