@@ -1,5 +1,3 @@
-// import { displayError } from './helpers/render';
-
 const getScore = async (url) => {
   const response = await fetch(url, {
     method: 'GET',
