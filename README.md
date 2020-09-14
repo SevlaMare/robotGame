@@ -1,5 +1,5 @@
 # Robot vs Ninja
-> A game where you can eliminate the ninjas, using a robot with massive destruction weapows.
+> A game where you can eliminate the ninjas, using a robot with massive destruction weapons.
 
 ![screenshot](doc/screenshot.png)
 
@@ -12,26 +12,34 @@
 * [Possible new features](possible-new-features)
 * [Requisites](#built-with)
 * [Built With](#built-with)
+* [Game Design](#game-design)
 * [Getting Start](#getting-start)
 * [Contributing](#contributing)
 * [Acknowledgments](#acknowledgments)
 * [Author](#author)
 * [License](#license)
 
+## How to play
+* Left and right keyboard arrows to move the robot.
+* Up arrow to jump.
+* Space bar to shoot the ninjas.
+* Press any button to start the game on the start screen.
+* Click in OK button to submit a score on game over screen.
+
 ## Live Demo
 You can access a online version of this game at:<br>
-https://weather-app-007.web.app/
+https://compassionate-shockley-5fecf8.netlify.app/
 
 ## Requirements
 - [x] A game build with Phaser 
-- [x] Leadboard system using an API
+- [x] Leaderboard system using an API
 - [x] Deployed and documented
 
 ## Possible new features
 - Controls for mobile
 - Pagination for scores
 - Highlight player best score
-- More content (Stages, actions and animations)
+- More content (Stages, actions, and animations)
 
 ## Requisites
 * [A modern web browser](https://www.google.com/chrome/)
@@ -49,6 +57,57 @@ https://weather-app-007.web.app/
 - GitHub Actions (CI Tool) <br>
 - Git, Github and VScode <br>
 
+## Game Design
+
+### Objective of the game
+* Play until you reach the top 10
+
+### Game Mechanics
+* Shoot ninjas to earn points.
+* Keep moving to avoid ninjas or is game over.
+
+### Scope
+* Kind: Shooter
+* Platform: Desktop web browser
+* Target: Build and deploy in 5 days, using free assets only.
+
+### Schedule
+#### Day 1 - Plan and setup
+- [x] Design game
+- [x] Execution plan
+- [x] Follow tutorial
+- [x] Look for examples
+
+#### Prepare assets
+- [x] Find source
+- [x] Resize sprites
+- [x] Create spreadsheets
+
+#### Setup
+- [x] Setup environment
+- [x] Configurations
+- [x] Files sctructure
+
+#### Day 2 - Start development
+##### Implementation
+- [x] Draft start, game, and ending scenes
+- [x] Setup to load assets and animations
+
+#### Day 3 - Core game engine
+- [x] Player movement
+- [x] Player shoot
+- [x] Enemy generator
+- [x] Score system
+
+#### Day 4 - Documentation and API
+- [x] Read API docs
+- [x] fetch data from API
+- [x] Integrates with API to submit scores
+- [x] Write unit tests
+
+#### Day 5 - Polish and Deploy
+- [x] Deploy
+- [x] Basic documentation
 
 ## Getting Start
 
@@ -80,6 +139,11 @@ yarn go
 #### Go to a web browser (Like Google Chrome) and visit:
 ```js
 localhost:7000
+```
+
+#### Run the tests
+```js
+yarn test
 ```
 
 ### Contributing

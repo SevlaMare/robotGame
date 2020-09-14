@@ -1,3 +1,5 @@
+// import { displayError } from './helpers/render';
+
 const getScore = async (url) => {
   const response = await fetch(url, {
     method: 'GET',
@@ -14,9 +16,12 @@ const sendScore = async (name, score) => {
 
   const response = await fetch(url, {
     method: 'POST',
+    mode: 'cors',
     headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     body: JSON.stringify({ user: name, score }),
   });
+
+  if (response.status === 400) { throw new Error('You need your name to send.'); }
 
   return response.json();
 };

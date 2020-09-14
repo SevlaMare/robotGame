@@ -115,8 +115,8 @@ export default class gameLoad extends Scene {
 
     // --- START GAME ACTION ---
     this.input.keyboard.on('keydown', () => {
-      this.scene.stop('gameLoad');
-      this.scene.start('gameMain');
+      this.scene.stop('bootGame');
+      this.scene.start('startGame');
     });
 
     this.input.on('pointerup', () => {

@@ -1,5 +1,6 @@
 import { Scene } from '../phaser.min';
 import { sendScore } from '../connector';
+import { displayError } from '../helpers/render';
 
 export default class gameEnd extends Scene {
   constructor() { super('endGame'); }
@@ -24,8 +25,8 @@ export default class gameEnd extends Scene {
       width: 160px;
       padding: 10px;
       background: #fff;
-    " id="fieldName">
-    <input type="button" value="GO" 
+    " id="fieldName" required>
+    <input type="submit" value="GO"
       id="sendName"
       style="color: #333;
       padding: 8px;
@@ -36,13 +37,25 @@ export default class gameEnd extends Scene {
     </form>`;
     this.add.dom(85, 270).setOrigin(0).createFromHTML(inputName);
 
+    // container to display error message
+    const errorBox = `<p style="
+      color: red;
+      padding: 3px 5px;
+      border-radius: 5px;
+      background: #fff;
+      " id="error"></p>`;
+    this.add.dom(80, 325).setOrigin(0).createFromHTML(errorBox);
+
     // submit score action
-    document.querySelector('#sendName').onclick = () => {
+    document.querySelector('#sendName').onclick = (event) => {
       sendScore(document.querySelector('#fieldName').value, window.gS.score)
         .then(() => {
           this.scene.stop('endGame');
           this.scene.start('scoresGame');
-        });
+        })
+        .catch(err => displayError(err));
+
+      event.preventDefault();
     };
 
     // reset game button
