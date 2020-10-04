@@ -9,7 +9,7 @@ const getScore = async (url) => {
 };
 
 const sendScore = async (name, score) => {
-  const hash = 'XzHsDGhBgMOmUU8gUgdd';
+  const hash = 'V9ILV26xsH3AzCaQYXZc';
   const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${hash}/scores/`;
 
   const response = await fetch(url, {

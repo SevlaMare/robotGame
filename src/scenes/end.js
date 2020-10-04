@@ -48,7 +48,8 @@ export default class gameEnd extends Scene {
 
     // submit score action
     document.querySelector('#sendName').onclick = (event) => {
-      sendScore(document.querySelector('#fieldName').value, window.gS.score)
+      const name = document.querySelector('#fieldName').value.slice(0, 12)
+      sendScore(name, window.gS.score)
         .then(() => {
           this.scene.stop('endGame');
           this.scene.start('scoresGame');

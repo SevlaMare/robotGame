@@ -26,7 +26,7 @@ export default class gameScores extends Scene {
     this.add.dom(150, 55).setOrigin(0).createFromHTML(errorBox);
 
     // fetch scores
-    const hash = 'XzHsDGhBgMOmUU8gUgdd';
+    const hash = 'V9ILV26xsH3AzCaQYXZc';
     const url = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${hash}/scores/`;
 
     getScore(url)
