@@ -3,7 +3,7 @@
 
 ![screenshot](doc/screenshot.png)
 
-<br>This project was made to consolidate my knowledge with JS, and take a step ahead on game development world.<br>
+<br>This project was made to consolidate my knowledge with JS, and take a step ahead in the game development world.<br>
 
 ## Content
 
@@ -24,10 +24,10 @@
 * Up arrow to jump.
 * Space bar to shoot the ninjas.
 * Press any button to start the game on the start screen.
-* Click in OK button to submit a score on game over screen.
+* Click on the OK button to submit a score on the game over screen.
 
 ## Live Demo
-You can access a online version of this game at:<br>
+You can access an online version of this game at:<br>
 https://robot-vs-ninja.netlify.app/
 
 ## Requirements
@@ -59,7 +59,7 @@ https://robot-vs-ninja.netlify.app/
 
 ## Game Design
 
-### Objective of the game
+### The objective of the game
 * Play until you reach the top 10
 
 ### Game Mechanics
@@ -86,11 +86,11 @@ https://robot-vs-ninja.netlify.app/
 #### Setup
 - [x] Setup environment
 - [x] Configurations
-- [x] Files sctructure
+- [x] Files structure
 
 #### Day 2 - Start development
 ##### Implementation
-- [x] Draft start, game, and ending scenes
+- [x] The draft starts, game, and ending scenes
 - [x] Setup to load assets and animations
 
 #### Day 3 - Core game engine
@@ -112,11 +112,11 @@ https://robot-vs-ninja.netlify.app/
 ## Getting Start
 
 #### Get a local copy
-Now you need a copy of this application, if you are using Git:
+Now you need a copy of this application if you are using Git:
 ```js
 git clone git@github.com:SevlaMare/robotGame.git
 ```
-Otherwise just hit (Download Zip) on green button (Code) at top of this page.
+Otherwise just hit (Download Zip) on the green button (Code) at top of this page.
 
 #### Open terminal
 Open your terminal inside the game folder, and paste the following commands:
@@ -154,7 +154,7 @@ You can do it on [issues page](issues/).
 
 ## Acknowledgments
 
-A special thanks for the code reviewers.
+A special thanks to the code reviewers.
 
 ## Author
 
